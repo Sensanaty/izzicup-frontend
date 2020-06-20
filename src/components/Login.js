@@ -25,6 +25,9 @@ class Login extends Component {
             });
     }
 
+    componentDidMount() {
+        document.title = "Izzicup - Login"
+    }
 
     render() {
         return (

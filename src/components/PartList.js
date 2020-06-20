@@ -10,6 +10,7 @@ class PartList extends Component {
     }
 
     componentDidMount() {
+        document.title = "Izzicup - Parts"
         let token = `Bearer ${localStorage.getItem("token")}`;
         axios({method: 'get', url: 'http://localhost:3000/v1/parts', headers: {'Authorization': token}})
             .then(response => {
