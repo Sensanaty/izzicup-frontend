@@ -7,11 +7,11 @@ class Navbar extends Component {
             return (
                 <>
                     <li className="nav-item"><p className="nav-text">Logged in as {this.props.email}</p></li>
-                    <li className="nav-item"><NavLink className="nav-link" to="/parts">Parts</NavLink></li>
-                    <li className="nav-item logout"><NavLink className="nav-link" to="/logout">Log Out</NavLink></li>
+                    <li className="nav-item"><NavLink className="nav-link" to="/parts" activeClassName='active'>Parts</NavLink></li>
+                    <li className="nav-item logout"><NavLink className="nav-link" to="/logout" activeClassName='active'>Log Out</NavLink></li>
                 </>
             )
-        } else return (<li className="nav-item login"><NavLink className="nav-link" to="/login">Login</NavLink></li>)
+        } else return (<li className="nav-item login"><NavLink className="nav-link" to="/login" activeClassName='active'>Login</NavLink></li>)
     }
 
     render() {

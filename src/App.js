@@ -28,7 +28,7 @@ class App extends Component {
     }
 
     setEmail = (email) => {
-        if (isDev()) { console.log(`Email logged '${this.state.email}`)}
+        if (isDev()) { console.log("Email logged")}
         this.setState({email: email});
     }
 
