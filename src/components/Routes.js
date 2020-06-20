@@ -10,7 +10,7 @@ class Routes extends Component {
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/login" render={ (props) => ( <Login loggedIn={this.props.loggedIn} login={this.props.login} {...props} /> )} />
+                <Route path="/login" render={ (props) => ( <Login loggedIn={this.props.loggedIn} login={this.props.login} setEmail={this.props.setEmail}{...props} /> )} />
                 <Route path="/logout" render={ (props) => ( <Logout loggedIn={this.props.loggedIn} logout={this.props.logout} {...props} /> )} />
                 <Route path="/parts" component={PartList} />
             </Switch>
