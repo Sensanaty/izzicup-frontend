@@ -6,7 +6,10 @@ import { isDev } from '../lib/helpers';
 class PartList extends Component {
     constructor(props) {
         super(props);
-        this.state = { parts: [] };
+        this.state = {
+            parts: [],
+            errorMessage: ""
+        };
     }
 
     componentDidMount() {
@@ -19,6 +22,7 @@ class PartList extends Component {
             })
             .catch(error => {
                 if (isDev()) { console.log('Error fetching parts', error) }
+                this.setState( { errorMessage: error })
             });
     }
 
