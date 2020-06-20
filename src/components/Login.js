@@ -14,6 +14,7 @@ class Login extends Component {
         const password = document.getElementById('password').value
         if(isDev()) {console.log(`Email:${email} | Password: ${password}`)}
         const request = {"email": email, "password": password};
+        // TODO: Replace this URL with production URL
         post('http://localhost:3000/v1/authenticate', request)
             .then(response => {
                 if (isDev()) { console.log(`Token Received: ${response.data.token}`) }

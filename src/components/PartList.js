@@ -15,6 +15,7 @@ class PartList extends Component {
     componentDidMount() {
         document.title = "Izzicup - Parts"
         let token = `Bearer ${localStorage.getItem("token")}`;
+        // TODO: Replace this URL with production URL
         axios({method: 'get', url: 'http://localhost:3000/v1/parts', headers: {'Authorization': token}})
             .then(response => {
                 if (isDev()) { console.log(response) }
