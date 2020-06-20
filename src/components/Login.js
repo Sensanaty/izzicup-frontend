@@ -17,7 +17,6 @@ class Login extends Component {
                 console.log(`Token Received: ${response.data.token}`)
                 localStorage.setItem("token", response.data.token);
                 this.props.history.push('/');
-                // eslint-disable-next-line no-unused-expressions
                 this.props.login();
             })
             .catch(error => console.log("Error on login", error));

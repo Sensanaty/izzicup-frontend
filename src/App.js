@@ -29,7 +29,7 @@ class App extends Component {
                 <Router>
                     <div className="container">
                         <Navbar loggedIn={this.state.loggedIn} />
-                        <Routes loggedIn={this.state.loggedIn} login={this.login} logout={this.logout} />
+                        <Routes login={this.login} logout={this.logout} />
                     </div>
                 </Router>
         );
