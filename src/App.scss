@@ -1,0 +1,17 @@
+@import './styles/variables';
+
+* { transition: all ease-in-out 0.1s }
+
+body {overflow-y: scroll}
+
+body, html, #root {
+    height: 100vh;
+    font-family: $font;
+    background: #fdfdfd;
+}
+
+.container {
+    height: 100%;
+}
+
+@import './styles/Navbar';
