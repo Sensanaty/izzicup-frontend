@@ -9161,11 +9161,6 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-redux-zero@^5.1.6:
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/redux-zero/-/redux-zero-5.1.6.tgz#45c62f27ad0612fa8b6c6cc93c4b9230702d0499"
-  integrity sha512-txhl+PkMxzli5SSV1gccIQqJVurSC53UntOyo4kQDep0r2Zsd+uubewJsGrPZvdtqtyP/jP2WPNFRoU5cKmlcQ==
-
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-8.2.0.tgz#e5de7111d655e7ba60c057dbe9ff37c87e65cdec"
