@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { isDev } from '../lib/helpers';
 
 class PartList extends Component {
     constructor(props) {
@@ -12,10 +13,12 @@ class PartList extends Component {
         let token = `Bearer ${localStorage.getItem("token")}`;
         axios({method: 'get', url: 'http://localhost:3000/v1/parts', headers: {'Authorization': token}})
             .then(response => {
-                console.log(response);
+                if (isDev()) { console.log(response) }
                 this.setState({ parts: response.data.parts.data })
             })
-            .catch(error => console.log('Error fetching parts', error));
+            .catch(error => {
+                if (isDev()) { console.log('Error fetching parts', error) }
+            });
     }
 
     render() {

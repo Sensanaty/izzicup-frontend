@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
+import {isDev} from '../lib/helpers';
 
 class Navbar extends Component {
 
@@ -18,7 +19,7 @@ class Navbar extends Component {
     render() {
         return (
             <nav className="navbar">
-                <p>{this.props.loggedIn.toString()}</p>
+                { isDev() ? <p>Props.loggedIn: {this.props.loggedIn.toString()}</p> : null }
                 <ul className="navbar-nav">
                     <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/">Home</NavLink></li>
                     {this.renderLinks()}

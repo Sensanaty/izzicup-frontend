@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { post } from 'axios';
+import { isDev } from '../lib/helpers';
 
 class Login extends Component {
     constructor(props) {
@@ -14,13 +15,16 @@ class Login extends Component {
         const request = {"email": email, "password": password};
         post('http://localhost:3000/v1/authenticate', request)
             .then(response => {
-                console.log(`Token Received: ${response.data.token}`)
+                if (isDev()) { console.log(`Token Received: ${response.data.token}`) }
                 localStorage.setItem("token", response.data.token);
                 this.props.history.push('/');
                 this.props.login();
             })
-            .catch(error => console.log("Error on login", error));
+            .catch(error =>{
+                if (isDev()) { console.log("Error on login", error) }
+            });
     }
+
 
     render() {
         return (

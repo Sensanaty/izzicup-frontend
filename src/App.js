@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router} from 'react-router-dom'
-
+import {BrowserRouter as Router} from 'react-router-dom';
+import { isDev } from './lib/helpers';
 import Navbar from './components/Navbar';
 import Routes from "./components/Routes";
 
@@ -16,11 +16,11 @@ class App extends Component {
     }
 
     login = () => {
-        console.log("Login function executed");
+        if (isDev()) { console.log("Login function executed") }
         this.setState( { loggedIn: true });
     }
     logout = () => {
-        console.log("Logout function executed");
+        if (isDev()) { console.log("Logout function executed") }
         this.setState( { loggedIn: false });
     }
 
