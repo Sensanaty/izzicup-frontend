@@ -20,6 +20,7 @@ class Login extends Component {
                 if (isDev()) { console.log(`Token Received: ${response.data.token}`) }
                 localStorage.setItem("token", response.data.token);
                 this.props.history.push('/');
+                localStorage.setItem("email", email);
                 this.props.setEmail(email);
                 this.props.login();
             })

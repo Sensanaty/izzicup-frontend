@@ -21,13 +21,29 @@ class App extends Component {
         if (isDev()) { console.log("Login function executed") }
         this.setState( { loggedIn: true });
     }
+
     logout = () => {
         if (isDev()) { console.log("Logout function executed") }
         this.setState( { loggedIn: false });
     }
+
     setEmail = (email) => {
         if (isDev()) { console.log(`Email logged '${this.state.email}`)}
         this.setState({email: email});
+    }
+
+    persistData = () => {
+        if(localStorage.getItem('token')) {
+            this.setState( { loggedIn: true } );
+        }
+
+        if(localStorage.getItem('email')) {
+            this.setEmail(localStorage.getItem('email'));
+        }
+    }
+
+    componentDidMount() {
+        this.persistData();
     }
 
     render() {
