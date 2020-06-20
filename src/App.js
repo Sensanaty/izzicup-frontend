@@ -36,24 +36,4 @@ class App extends Component {
     }
 }
 
-// const Main = () => {
-//     return (
-//         <Switch>
-//             <Route exact path="/">
-//                 <Home />
-//             </Route>
-//             <Route path="/login" >
-//                 <Login loggedIn={this.state.loggedIn} login={this.login}/>
-//             </Route>
-//             <Route path="/logout">
-//                 <Logout />
-//             </Route>
-//             <Route path="/parts" >
-//                 <PartList />
-//             </Route>
-//         </Switch>
-//
-//     )
-// };
-
 export default App;
