@@ -9,9 +9,11 @@ class App extends Component {
         super(props);
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
+        this.setEmail = this.setEmail.bind(this);
 
         this.state = {
-            loggedIn: false
+            loggedIn: false,
+            email: ''
         }
     }
 
@@ -19,17 +21,37 @@ class App extends Component {
         if (isDev()) { console.log("Login function executed") }
         this.setState( { loggedIn: true });
     }
+
     logout = () => {
         if (isDev()) { console.log("Logout function executed") }
         this.setState( { loggedIn: false });
+    }
+
+    setEmail = (email) => {
+        if (isDev()) { console.log("Email logged")}
+        this.setState({email: email});
+    }
+
+    persistData = () => {
+        if(localStorage.getItem('token')) {
+            this.setState( { loggedIn: true } );
+        }
+
+        if(localStorage.getItem('email')) {
+            this.setEmail(localStorage.getItem('email'));
+        }
+    }
+
+    componentDidMount() {
+        this.persistData();
     }
 
     render() {
         return (
                 <Router>
                     <div className="container">
-                        <Navbar loggedIn={this.state.loggedIn} />
-                        <Routes login={this.login} logout={this.logout} />
+                        <Navbar loggedIn={this.state.loggedIn} email={this.state.email} />
+                        <Routes login={this.login} logout={this.logout} setEmail={this.setEmail} />
                     </div>
                 </Router>
         );
