@@ -51,13 +51,12 @@ ul {
     padding: 15px;
     color: #fdfdfd;
     text-decoration: none;
-    border-radius: 5px;
     background: lighten($main-color, 5);
     font-weight: 600;
 
     &:hover {
         background: lighten($main-color, 10);
-        border-radius: 7px;
+        border-radius: 3px;
     }
 }
 
