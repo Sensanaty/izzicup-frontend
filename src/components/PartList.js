@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { isDev } from '../lib/helpers';
+import MakeTable from "./Table";
 
 class PartList extends Component {
     constructor(props) {
@@ -29,18 +30,10 @@ class PartList extends Component {
 
     render() {
         return(
-            <div>
-                {this.state.parts.map((part) => {
-                    return(
-                        <div key={part.id}>
-                            <h2><Link to={`localhost:3000/v1/parts/${part.id}`}>{part.title}</Link></h2>
-                            <p>Part Number: {part.attributes["part_number"]}</p>
-                            <p>Description: {part.attributes["description"]}</p>
-                            <hr/>
-                        </div>
-                    )
-                })}
+            <div className="table">
+                <MakeTable parts={this.state.parts}/>
             </div>
+            // <h2><Link to={`localhost:3000/v1/parts/${part.id}`}>{part.title}</Link></h2>
         )
     }
 }
