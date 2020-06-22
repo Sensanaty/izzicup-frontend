@@ -1,8 +1,7 @@
 import React from "react";
 import {useTable} from "react-table";
-import 'datejs';
 
-const Table = ( { columns, data }) => {
+const Table = ({ columns, data }) => {
     const {
         getTableProps,
         getTableBodyProps,
@@ -151,6 +150,7 @@ function MakeTable(props) {
 
     return (
         <Table columns={columns} data={props.parts} />
+
     )
 }
 
