@@ -28,10 +28,13 @@ class App extends Component {
     }
 
     setEmail = (email) => {
-        if (isDev()) { console.log("Email logged")}
+        if (isDev()) { console.log("FUNC setEmail: Email logged")}
         this.setState({email: email});
     }
 
+    /**
+     * Keep the user logged in if a auth token is present and save Email to state for display purposes
+     */
     persistData = () => {
         if(localStorage.getItem('token')) {
             this.setState( { loggedIn: true } );
