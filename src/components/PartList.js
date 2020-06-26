@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 // import { Link } from 'react-router-dom';
-import { isDev } from '../lib/helpers';
+import { isDev, callPartApi } from '../lib/helpers';
 import MakeTable from "./Table";
 
 class PartList extends Component {
@@ -17,7 +16,7 @@ class PartList extends Component {
         document.title = "Izzicup - Parts"
         let token = `Bearer ${localStorage.getItem("token")}`;
         // TODO: Replace this URL with production URL
-        axios({method: 'get', url: 'http://localhost:3000/v1/parts', headers: {'Authorization': token}})
+        callPartApi()
             .then(response => {
                 if (isDev()) { console.log(response) }
                 this.setState({ parts: response.data.parts.data })
