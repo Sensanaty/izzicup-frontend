@@ -12,7 +12,6 @@ class Login extends Component {
         event.preventDefault();
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value
-        if(isDev()) {console.log(`Email:${email} | Password: ${password}`)}
         const request = {"email": email, "password": password};
         // TODO: Replace this URL with production URL
         post('http://localhost:3000/v1/authenticate', request)
@@ -26,6 +25,7 @@ class Login extends Component {
             })
             .catch(error =>{
                 if (isDev()) { console.log("Error on login", error) }
+                return (<div className="error">Error: {error}</div>)
             });
     }
 
